@@ -1,0 +1,166 @@
+#main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 90rem;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+#main-form {
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  display: flex;
+  border: 1px solid gray;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main-form-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.main-form-input-container > label {
+  font-weight: 500;
+}
+
+.form-input {
+  /* Cambiado de outline a border para que la validación visual sea más clara */
+  border: 1px solid gray; 
+  outline: none; /* Asegura que no haya un outline por defecto */
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+}
+
+.main-form-helper-text {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #dc3545; /* Rojo más estándar */
+  display: none;
+}
+
+#main-form-btn {
+  background-color: #4338ca;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 0.375rem;
+}
+
+#contacts-list {
+  margin: 0;
+  padding: 0.5rem;
+  list-style: none;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 0.375rem;
+  border: 1px solid gray;
+  height: 100%;
+}
+
+.edit-btn {
+  width: 2rem;
+  height: 2rem;
+}
+
+.delete-btn {
+  width: 2rem;
+  height: 2rem;
+}
+
+.inputs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.contacts-list-item-name-input, .contacts-list-item-phone-input {
+  width: 100%;
+  outline: none;
+  border: 1px solid transparent; /* Base transparente para la lista */
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+}
+
+.btns-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.contacts-list-item {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+#main-form-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pencil-icon {
+  display: none;
+}
+
+.input-valid {
+
+  border: 2px solid #28a745 !important;
+  outline: none;
+}
+
+.input-invalid {
+  border: 2px solid #dc3545 !important; 
+  outline: none;
+}
+
+.show-helper-text{
+  display: block;
+}
+
+.input-is-editing {
+  box-shadow: 0 0 0 1px #4338ca;
+}
+
+.contacts-list-item-name-input[readonly], .contacts-list-item-phone-input[readonly] {
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+
+@media (min-width: 768px){
+  #main-form {
+    width: 70%;
+  }
+
+  #contacts-list {
+    width: 70%;
+  }
+
+  .inputs-container {
+    flex-wrap: nowrap;
+  }
+
+  #main-container {
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px){
+  #main-form {
+    width: 50%;
+  }
+
+  #contacts-list {
+    width: 50%;
+  }
+
+}
